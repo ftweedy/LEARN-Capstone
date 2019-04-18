@@ -1,6 +1,2 @@
-<% if user_signed_in? %>
-  <%= react_component('AuthenticatedApp') %>
-<% else %>
-  <%= link_to('Login', new_user_session_path)  %>
-  <%= react_component('UnauthenticatedApp') %>
-<% end %>
+<%= link_to('Login', new_user_session_path)  %>
+<%= react_component('UnauthenticatedApp') %>
