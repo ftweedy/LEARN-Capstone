@@ -7,16 +7,16 @@ class ConfessionsController < ApplicationController
   def create
       confession = Confession.create(confession_params)
       confessions = Confession.all
-        if appartment.valid?
-            render json: appartments
+        if confession.valid?
+            render json: confessions
         else
-            render json: appartment.errors, status: :unprocessable_entity
+            render json: confession.errors, status: :unprocessable_entity
         end
   end
 
   def update
       confession = Confession.find(params[:id])
-      confession.update(name: params[:name], age: params[:age], enjoys: params[:enjoys])
+      confession.update(name: params[:name])
       confessions = Confession.all
       render json: confessions
   end
@@ -27,6 +27,6 @@ class ConfessionsController < ApplicationController
   end
 
   def confession_params
-      params.require(:confession).permit(:street_num, :street_name, :city, :postal_code, :state, :country, :mgr_name, :mgr_phone, :mgr_hours, :user_id)
+      params.require(:confession).permit(:name)
   end
 end
