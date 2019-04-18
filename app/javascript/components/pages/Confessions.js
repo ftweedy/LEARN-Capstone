@@ -1,13 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-class UnauthenticatedApp extends React.Component {
+class Confessions extends React.Component {
   render () {
     return (
       <React.Fragment>
-        Unauthenticated
+        Your Confessions
       </React.Fragment>
     );
   }
 }
 
-export default UnauthenticatedApp
+export default Confessions
