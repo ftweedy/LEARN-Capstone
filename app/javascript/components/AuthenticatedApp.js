@@ -10,6 +10,7 @@ class AuthenticatedApp extends React.Component {
       <Router>
         <React.Fragment>
         <Link to='/confess'>Confess</Link>
+        <Link to='/confessions'> My Confessions</Link>
           <Switch>
             <Route path='/confess' component={Confess}/>
             <Route path='/confessions' component={Confessions}/>

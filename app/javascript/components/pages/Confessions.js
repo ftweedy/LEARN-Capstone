@@ -27,7 +27,7 @@ class Confessions extends React.Component {
 
         return (
             <React.Fragment>
-                <h1>Confess Here</h1>
+                <h1>My Confessions</h1>
                 <table>
                     <tbody>
                         <tr>
