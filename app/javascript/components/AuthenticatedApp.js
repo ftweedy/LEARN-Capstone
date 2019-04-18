@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Confessions from './pages/Confessions'
 import Confess from './pages/Confess'
 import Home from './pages/Home'
+// import {
+//   Col, Container, Row, FormControl, Form
+// } from 'react-bootstrap'
 
 class AuthenticatedApp extends React.Component {
   render () {
