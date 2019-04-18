@@ -1,13 +1,49 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 class Confessions extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        Your Confessions
-      </React.Fragment>
-    );
-  }
+    constructor(props){
+        super(props)
+        this.state = {
+            confessions: []
+        }
+    }
+
+    componentDidMount(){
+        fetch('/confessions.json')
+        .then((response) => {
+            return response.json()
+        })
+        .then((json) => {
+            this.setState({confessions: json})
+        })
+        .catch((e) => {
+            console.log("Error", e)
+        })
+    }
+
+    render(){
+        const { confessions } = this.state
+
+        return (
+            <React.Fragment>
+                <h1>Confess Here</h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Confession</th>
+                        </tr>
+
+                        {confessions.map((confession, index) =>
+                            <tr key={index}>
+                                <td>{confession.confess}</td>
+                            </tr>
+                            )}
+                    </tbody>
+                </table>
+            </React.Fragment>
+        );
+    }
 }
 
 export default Confessions
