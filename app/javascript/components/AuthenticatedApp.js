@@ -5,6 +5,7 @@ import Confessions from './pages/Confessions'
 import Confess from './pages/Confess'
 import Home from './pages/Home'
 
+
 class AuthenticatedApp extends React.Component {
   render () {
     return (
