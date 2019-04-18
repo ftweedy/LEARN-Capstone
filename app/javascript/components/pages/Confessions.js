@@ -23,27 +23,26 @@ class Confessions extends React.Component {
     }
 
     render(){
-        const { confessions } = this.state
-
-        return (
-            <React.Fragment>
-                <h1>My Confessions</h1>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Confession</th>
-                        </tr>
-
-                        {confessions.map((confession, index) =>
-                            <tr key={index}>
-                                <td>{confession.confess}</td>
-                            </tr>
-                            )}
-                    </tbody>
-                </table>
-            </React.Fragment>
-        );
+      const { confessions } = this.state
+      return (
+        <React.Fragment>
+            <h1>My Confessions</h1>
+            <table>
+                <tbody>
+                    <tr>
+                      <th>Confession</th>
+                    </tr>
+                    {confessions.map((confession, index) =>
+                      <tr key={index}>
+                          <td>{confession.confess}</td>
+                      </tr>
+                    )}
+                </tbody>
+            </table>
+        </React.Fragment>
+      );
     }
+
 }
 
 export default Confessions
