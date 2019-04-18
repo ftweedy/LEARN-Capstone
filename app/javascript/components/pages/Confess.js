@@ -6,7 +6,7 @@ class Confess extends React.Component {
         super(props)
         this.state = {
             form: {
-                confess: ""
+                name: ""
             }
         }
     }
@@ -15,7 +15,7 @@ class Confess extends React.Component {
         return (
             <form>
                 <label>Confession Box</label>
-                <input type="text" name="confess" />
+                <input type="text" name="name" />
 
                 <input type="submit" value="Submit" />
             </form>
