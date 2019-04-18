@@ -14,7 +14,7 @@ class Confess extends React.Component {
     render() {
         return (
             <form>
-                <Label>Confession Box</Label>
+                <label>Confession Box</label>
                 <input type="text" name="confess" />
 
                 <input type="submit" value="Submit" />
