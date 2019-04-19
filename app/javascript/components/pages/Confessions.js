@@ -34,7 +34,9 @@ class Confessions extends React.Component {
                     </tr>
                     {confessions.map((confession, index) =>
                       <tr key={index}>
+                          <td>{confession.user_id}</td>
                           <td>{confession.name}</td>
+                          <td>{confession.gif_url}</td>
                       </tr>
                     )}
                 </tbody>

@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     authenticated :user do
       root to: 'pages#protected'
     end
-    
+
     root to: 'pages#unprotected'
 end
