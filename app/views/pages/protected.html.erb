@@ -1,2 +1,2 @@
-<%= react_component('AuthenticatedApp') %>
+<%= react_component('AuthenticatedApp', current_user: current_user) %>
 <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
