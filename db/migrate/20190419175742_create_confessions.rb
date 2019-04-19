@@ -3,7 +3,7 @@ class CreateConfessions < ActiveRecord::Migration[5.2]
     create_table :confessions do |t|
       t.integer :user_id
       t.text :name
-      t.blob :gif_url
+      t.text :gif_url
 
       t.timestamps
     end
