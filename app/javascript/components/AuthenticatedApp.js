@@ -9,25 +9,10 @@ import {
 } from 'react-bootstrap'
 
 class AuthenticatedApp extends React.Component {
-  logOut = (user) =>{
-    console.log(user)
-    return fetch('/users/sign_out', {
-      body: JSON.stringify(user),
-  		headers: {
-  			'Content-Type': 'application/json'
-  		},
-  		method: "DELETE"
-	   })
-		.then((resp) => {
-      console.log(resp)
-		})
-  }
-
   render () {
     return (
       <Router>
         <React.Fragment>
-
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -43,9 +28,6 @@ class AuthenticatedApp extends React.Component {
               <li className="nav-item">
                 <Link to='/confess' className="nav-link"><font color="black">New Confession</font></Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" onClick={() => this.logOut(this.props.current_user)}>Logout</a>
-              </li>
             </ul>
           </div>
         </nav>
@@ -54,6 +36,7 @@ class AuthenticatedApp extends React.Component {
             <Route path='/home' component={Home}/>
             <Route path='/confess' component={Confess}/>
             <Route path='/confessions' component={Confessions}/>
+            <Route path='/' component={Home}/>
           </Switch>
         </React.Fragment>
       </Router>
