@@ -7,7 +7,8 @@ class Confess extends React.Component {
         super(props)
         this.state = {
             form: {
-                name: ""
+                name: "",
+                gif_url: ""
             }
         }
     }
@@ -18,6 +19,7 @@ class Confess extends React.Component {
             <form>
                 <label>Confession Box</label>
                 <input type="text" name="name" />
+
                 <input type="submit" value="Submit" />
             </form>
             <Tenor token="98ZLNV4AZJG0" onSelect={result => console.log(result.url)} />
