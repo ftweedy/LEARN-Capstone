@@ -34,7 +34,7 @@ class Confessions extends React.Component {
                     </tr>
                     {confessions.map((confession, index) =>
                       <tr key={index}>
-                          <td>{confession.confess}</td>
+                          <td>{confession.name}</td>
                       </tr>
                     )}
                 </tbody>
