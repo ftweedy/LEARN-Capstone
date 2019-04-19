@@ -14,6 +14,22 @@ class Confess extends React.Component {
     }
   }
 
+  handleNewConfession = (confessionForm) => {
+    const BASE = 'http://localhost:3000'
+  	return fetch(BASE + '/confessions', {
+  		body: JSON.stringify(confessionForm),
+  		headers: {
+  			'Content-Type': 'application/json'
+  		},
+  		method: "POST"
+  	})
+  		.then((resp) => {
+  			let json = resp.json()
+
+  			return json
+  		})
+  }
+
   handleFormChange = (event) => {
     const { form } = this.state
     form[event.target.name] = event.target.value
@@ -40,7 +56,7 @@ class Confess extends React.Component {
               onChange={this.handleFormChange}
               value={name}
             />
-          <Button type="submit" >Submit</Button>
+          <Button type="submit" onClick={this.handleNewConfession(this.state.form)}>Submit</Button>
         </Form>
         <Tenor
           name="gif_url"
