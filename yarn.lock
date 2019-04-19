@@ -5860,6 +5860,11 @@ react-router@5.0.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
+react-tenor@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-tenor/-/react-tenor-1.1.0.tgz#63c11455a174c93d7b6db61db90cb0872f4879e4"
+  integrity sha512-7e12SgwjyrYxf61eyUoJoHL6ayibGUMWViPdsVDVdgQgWcT82FBFPzJpJZ2Uof4Q26zqjLGQPrclSLExVy2c6g==
+
 react-transition-group@^2.7.1:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
