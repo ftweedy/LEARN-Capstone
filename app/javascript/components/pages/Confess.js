@@ -56,7 +56,7 @@ class Confess extends React.Component {
               onChange={this.handleFormChange}
               value={name}
             />
-          <Button type="submit" onClick={this.handleNewConfession(this.state.form)}>Submit</Button>
+          <Button type="submit" onClick={()=>this.handleNewConfession(this.state.form)}>Submit</Button>
         </Form>
         <Tenor
           name="gif_url"
