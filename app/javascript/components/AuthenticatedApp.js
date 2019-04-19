@@ -9,19 +9,7 @@ import {
 } from 'react-bootstrap'
 
 class AuthenticatedApp extends React.Component {
-  logOut = (user) =>{
-    console.log(user)
-    return fetch('/users/sign_out', {
-      body: JSON.stringify(user),
-  		headers: {
-  			'Content-Type': 'application/json'
-  		},
-  		method: "DELETE"
-	   })
-		.then((resp) => {
-      console.log(resp)
-		})
-  }
+
 
   render () {
     return (
@@ -41,7 +29,7 @@ class AuthenticatedApp extends React.Component {
                 <Link to='/confessions' className="nav-link"><font color="black">My Confessions</font></Link>
               </li>
               <li className="nav-item">
-                <Link to='/confess' className="nav-link"><font color="black">New Confession</font></Link>
+                <Link to='/confess' className="nav-link"><font color="black">Confess</font></Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" onClick={() => this.logOut(this.props.current_user)}>Logout</a>
