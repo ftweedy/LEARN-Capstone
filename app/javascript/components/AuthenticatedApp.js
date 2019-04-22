@@ -35,7 +35,7 @@ class AuthenticatedApp extends React.Component {
           <Switch>
             <Route path='/home' component={Home}/>
             <Route path='/confess' component={Confess}/>
-            <Route path='/confessions' component={Confessions}/>
+            <Route path='/confessions' render={(props) => <Confessions current_user={this.props.current_user} isAuthed={true}/>}/>
             <Route path='/' component={Home}/>
           </Switch>
         </React.Fragment>
