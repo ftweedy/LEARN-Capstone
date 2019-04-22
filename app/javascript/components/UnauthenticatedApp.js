@@ -1,15 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Home from './pages/Home'
+import React from "react";
+import PropTypes from "prop-types";
+import Home from "./pages/Home";
 
 class UnauthenticatedApp extends React.Component {
-  render () {
+  render() {
     return (
       <React.Fragment>
-        <Home/>
+        <Home />
       </React.Fragment>
     );
   }
 }
 
-export default UnauthenticatedApp
+export default UnauthenticatedApp;
