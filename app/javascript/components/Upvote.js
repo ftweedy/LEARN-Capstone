@@ -39,7 +39,6 @@ class Upvote extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h2>Like if Tim a bitch</h2>
         <button
           id="upButton"
           type="button"
@@ -74,10 +73,6 @@ class Upvote extends React.Component {
             />
           </svg>
         </button>
-        <img
-          alt="yes"
-          src="https://s3.amazonaws.com/rapgenius/tumblr_lv15t9n0Ln1qd7uwho1_r1_400.gif"
-        />
       </React.Fragment>
     );
   }

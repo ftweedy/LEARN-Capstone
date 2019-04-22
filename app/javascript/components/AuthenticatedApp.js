@@ -19,19 +19,6 @@ import {
 import Upvote from "./Upvote";
 
 class AuthenticatedApp extends React.Component {
-  logOut = user => {
-    console.log(user);
-    return fetch("/users/sign_out", {
-      body: JSON.stringify(user),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "DELETE"
-    }).then(resp => {
-      console.log(resp);
-    });
-  };
-
   render() {
     return (
       <Router>
@@ -62,16 +49,8 @@ class AuthenticatedApp extends React.Component {
                 </li>
                 <li className="nav-item">
                   <Link to="/confess" className="nav-link">
-                    <font color="black">New Confession</font>
+                    <font color="black">Confess</font>
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    onClick={() => this.logOut(this.props.current_user)}
-                  >
-                    Logout
-                  </a>
                 </li>
               </ul>
             </div>
@@ -81,6 +60,7 @@ class AuthenticatedApp extends React.Component {
             <Route path="/home" component={Home} />
             <Route path="/confess" component={Confess} />
             <Route path="/confessions" component={Confessions} />
+            <Route path="/" component={Home} />
           </Switch>
         </React.Fragment>
       </Router>
