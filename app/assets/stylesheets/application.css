@@ -117,6 +117,17 @@
 }
 
 #all{
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 10em;
+}
+
+.submit {
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.form {
+  text-align: center;
+  padding-left: 10em;
+  padding-right: 10em;
 }

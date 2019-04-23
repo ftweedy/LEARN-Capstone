@@ -61,20 +61,23 @@ class Confess extends React.Component {
       <div>
         <h1>Confess Here</h1>
         <Form>
-          <Form.Label id="name">Confession Box</Form.Label>
           <Form.Control
+            className="form"
             type="text"
             name="name"
             placeholder="Enter Your Confession"
             onChange={this.handleFormChange}
             value={name}
           />
-          <Button
-            type="submit"
-            onClick={() => this.handleNewConfession(this.state.form)}
-          >
-            Submit
-          </Button>
+          <br/>
+          <div className="submit">
+            <Button
+              type="submit"
+              onClick={() => this.handleNewConfession(this.state.form)}
+            >
+              Submit
+            </Button>
+          </div>
         </Form>
         <br />
         <SearchBar onTermChange={term => this.handleTermChange(term)} />

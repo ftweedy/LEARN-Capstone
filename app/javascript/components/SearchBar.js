@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Form } from "react-bootstrap"
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props)
@@ -17,9 +19,14 @@ class SearchBar extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <div className="search">
-          <input onChange={event => this.onInputChange(event.target.value)}/>
-        </div>
+        <Form>
+            <Form.Control
+              className="form"
+              type="text"
+              placeholder="Enter a keyword to find a GIF!"
+              onChange={event => this.onInputChange(event.target.value)}
+            />
+        </Form>
       </React.Fragment>
     );
   }
