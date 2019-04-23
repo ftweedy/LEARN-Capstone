@@ -1,6 +1,6 @@
 class ConfessionsController < ActionController::API
   before_action :set_confession, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
 
     def index
       confessions = Confession.all
