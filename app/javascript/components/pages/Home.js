@@ -33,10 +33,16 @@ class Home extends React.Component {
         {confessions.map((confession, index) => {
             return (
               <Card style={{ width: "18rem" }} key={index}>
-                <Upvote />
                 <Card.Img variant="top" src={confession.gif_url} />
                 <Card.Body>
+                <table><tb><tr>
+                <td>
                   <Card.Text>{confession.name}</Card.Text>
+                </td>
+                <td>
+                  <Upvote />
+                </td>
+                </tr></tb></table>
                 </Card.Body>
               </Card>
             )})

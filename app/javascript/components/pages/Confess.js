@@ -27,7 +27,6 @@ class Confess extends React.Component {
       method: "POST"
     }).then(resp => {
       let json = resp.json();
-
       return json;
     });
   };
