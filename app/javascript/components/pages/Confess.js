@@ -42,6 +42,7 @@ class Confess extends React.Component {
     const { form } = this.state;
     form.gif_url = event.media[0].gif.url;
     this.setState({ form: form });
+    alert("Image selected");
   };
 
   handleTermChange = term => {
