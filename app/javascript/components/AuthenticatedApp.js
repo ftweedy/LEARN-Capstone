@@ -11,8 +11,9 @@ import {
 class AuthenticatedApp extends React.Component {
   render () {
     return (
+      <React.Fragment>
       <Router>
-        <React.Fragment>
+
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -36,10 +37,11 @@ class AuthenticatedApp extends React.Component {
             <Route path='/home' component={Home}/>
             <Route path='/confess' component={Confess}/>
             <Route path='/confessions' render={(props) => <Confessions current_user={this.props.current_user} isAuthed={true}/>}/>
-            <Route path='/' component={Home}/>
+            <Route exact path='/' component={Home}/>
           </Switch>
-        </React.Fragment>
+
       </Router>
+      </React.Fragment>
     );
   }
 }

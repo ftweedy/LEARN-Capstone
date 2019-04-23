@@ -40,17 +40,16 @@ class Confess extends React.Component {
   }
 
   handleGifSelect = (event) => {
-    console.log(event);
     const { form } = this.state
-    form.gif_url = event.images.downsized.url
+    form.gif_url = event.media[0].gif.url
     this.setState({form: form})
   }
 
   handleTermChange = (term) => {
-    const url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=fQTt4fDxOpLvR7UCN5XCwQt8QdJrCx9Y`;
+    const url = `https://api.tenor.com/v1/search?tag=${term.replace(/\s/g, '+')}&key=5N8TMAMBVVDJ&limit=13`;
 
     request.get(url, (err, res) => {
-        this.setState({ gifs: res.body.data })
+        this.setState({ gifs: res.body.results })
     });
   }
 
