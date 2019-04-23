@@ -29,6 +29,7 @@ class Home extends React.Component {
     const { confessions } = this.state;
     return (
       <React.Fragment>
+      <div id="all" class="d-flex flex-wrap">
         <h1>Anything you want to Confess?</h1>
         {confessions.map((confession, index) => {
             return (
@@ -41,6 +42,7 @@ class Home extends React.Component {
               </Card>
             )})
         }
+        </div>
       </React.Fragment>
     )
   }

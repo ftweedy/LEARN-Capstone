@@ -115,3 +115,8 @@
   fill: #ff586c;
   cursor: pointer;
 }
+
+#all{
+  column-gap: 10px;
+  row-gap: 10px;
+}
