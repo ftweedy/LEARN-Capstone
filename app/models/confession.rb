@@ -1,5 +1,5 @@
 class Confession < ApplicationRecord
     belongs_to :user
 
-    validates :name, presence: true
+    validates :name, :gif_url, presence: true
 end
