@@ -37,7 +37,6 @@ class Confessions extends React.Component {
                 <Card.Img variant="top" src={confession.gif_url} />
                 <Card.Body>
                   <Card.Text>{confession.name}</Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
               </Card>
             );
@@ -45,24 +44,6 @@ class Confessions extends React.Component {
             console.log("Nothing to Display");
           }
         })}
-      </React.Fragment>
-    );
-  }
-
-  render() {
-    const { confessions } = this.state;
-    return (
-      <React.Fragment>
-        {confessions.map((confession, index) => (
-          <Card style={{ width: "18rem" }} key={index}>
-            <Upvote id="updown" />
-            <Card.Img id="card" variant="top" src={confession.gif_url} />
-            <Card.Body>
-              <Card.Text>{confession.name}</Card.Text>
-              <Button variant="primary">Go somewhere</Button>
-            </Card.Body>
-          </Card>
-        ))}
       </React.Fragment>
     );
   }
