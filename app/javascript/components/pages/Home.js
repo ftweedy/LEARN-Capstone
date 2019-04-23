@@ -30,7 +30,6 @@ class Home extends React.Component {
     return (
       <React.Fragment>
       <div id="all" class="d-flex flex-wrap">
-        <h1>Anything you want to Confess?</h1>
         {confessions.map((confession, index) => {
             return (
               <Card style={{ width: "18rem" }} key={index}>

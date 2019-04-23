@@ -23,34 +23,32 @@ class AuthenticatedApp extends React.Component {
     return (
       <React.Fragment>
       <Router>
-
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/home">Confessr</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/confess">Confess</Nav.Link>
-            <Nav.Link href="/confessions">My Confessions</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-
-          <Switch>
-            <Route path="/home" component={Home} />
-            <Route path="/confess" component={Confess} />
-            <Route
-              path="/confessions"
-              render={props => (
-                <Confessions
-                  current_user={this.props.current_user}
-                  isAuthed={true}
-                />
-              )}
-            />
-            <Route exact path="/" component={Home} />
-          </Switch>
-        </Router>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand><Link to="/home">Confessr</Link></Navbar.Brand>
+            <Navbar.Collapse id="responsive-navbar-nav" class="navbar-collapse-lg">
+              <Nav >
+                <Navbar.Brand><Link to="/home" className="btn btn-outline-success">Home</Link></Navbar.Brand>
+                <Navbar.Brand><Link to="/confess" className="btn btn-outline-success">Confess</Link></Navbar.Brand>
+                <Navbar.Brand><Link to="/confessions" className="btn btn-outline-success">My Confessions</Link></Navbar.Brand>
+              </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+        <Switch>
+          <Route path="/protected" component={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/confess" component={Confess} />
+          <Route
+            path="/confessions"
+            render={props => (
+              <Confessions
+                current_user={this.props.current_user}
+                isAuthed={true}
+              />
+            )}
+          />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </Router>
       </React.Fragment>
     );
   }
