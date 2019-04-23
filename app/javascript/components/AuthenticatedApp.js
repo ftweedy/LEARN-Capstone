@@ -22,39 +22,20 @@ class AuthenticatedApp extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Router>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarColor03"
-              aria-controls="navbarColor03"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
-            <div className="collapse navbar-collapse" id="navbarColor03">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
-                  <Link to="/home" className="nav-link">
-                    <font color="black">Home</font>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/confessions" className="nav-link">
-                    <font color="black">My Confessions</font>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/confess" className="nav-link">
-                    <font color="black">Confess</font>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
+      <Router>
+
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="/home">Confessr</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/confess">Confess</Nav.Link>
+            <Nav.Link href="/confessions">My Confessions</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+
 
           <Switch>
             <Route path="/home" component={Home} />
