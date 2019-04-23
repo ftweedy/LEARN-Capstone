@@ -117,13 +117,14 @@
 }
 
 #all{
-  column-gap: 10em;
+  column-gap: 10px;
+  row-gap: 10px;
 }
 
 .submit {
   display: flex;
- justify-content: center;
- align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .form {
