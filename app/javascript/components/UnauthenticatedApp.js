@@ -29,6 +29,7 @@ class UnauthenticatedApp extends React.Component {
     const { confessions } = this.state
     return(
     <React.Fragment>
+    <div id="all" class="d-flex flex-wrap">
       {confessions.map((confession, index) => {
         return (
           <Card style={{ width: '18rem' }} key={index}>
@@ -41,6 +42,7 @@ class UnauthenticatedApp extends React.Component {
           </Card>
         )
       })}
+      </div>
       </React.Fragment>
     )
   }
