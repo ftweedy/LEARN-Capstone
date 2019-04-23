@@ -4,27 +4,27 @@ import { Card, Container, Row, Col } from "react-bootstrap";
 import Upvote from "../Upvote";
 
 class Confessions extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      confessions: []
-    };
-  }
+    constructor(props){
+        super(props)
+        this.state = {
+            confessions: []
+        }
+    }
 
-  componentDidMount() {
-    fetch("/confessions.json")
-      .then(response => {
-        return response.json();
-      })
-      .then(json => {
-        this.setState({ confessions: json });
-      })
-      .catch(e => {
-        console.log("Error", e);
-      });
-  }
+    componentDidMount(){
+        fetch('/confessions.json')
+        .then((response) => {
+            return response.json()
+        })
+        .then((json) => {
+            this.setState({confessions: json})
+        })
+        .catch((e) => {
+            console.log("Error", e)
+        })
+    }
 
-  render() {
+    render() {
     const { confessions } = this.state;
     const { id } = this.props.current_user;
     return (
@@ -53,6 +53,7 @@ class Confessions extends React.Component {
       </React.Fragment>
     );
   }
+
 }
 
-export default Confessions;
+export default Confessions
