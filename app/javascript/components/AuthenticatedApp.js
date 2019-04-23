@@ -29,9 +29,9 @@ class AuthenticatedApp extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/confess">Confess</Nav.Link>
-            <Nav.Link href="/confessions">My Confessions</Nav.Link>
+            <Nav.Link> <Link to="/home">Home</Link></Nav.Link>
+            <Nav.Link> <Link to="/confess">Confess</Link></Nav.Link>
+            <Nav.Link> <Link to="/confessions">My Confessions</Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

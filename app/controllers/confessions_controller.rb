@@ -32,7 +32,10 @@ class ConfessionsController < ActionController::API
     end
 
     def destroy
-      confession.destroy
+      confession = Confession.find(params[:id])
+      if confession.destroy
+        render json: Confession.all
+      end
     end
 
     private
