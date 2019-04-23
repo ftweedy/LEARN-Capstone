@@ -46,4 +46,4 @@ class UnauthenticatedApp extends React.Component {
   }
 }
 
-export default UnauthenticatedApp
+export default UnauthenticatedApp;
