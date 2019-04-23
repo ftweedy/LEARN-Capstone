@@ -26,16 +26,6 @@ class Upvote extends React.Component {
     };
   };
 
-  scorecheck = () => {
-    if (this.state.count < 0) {
-      <h4 style={{ color: green }} />;
-    } else if (this.state.count > 0) {
-      <h4 style={{ color: red }} />;
-    } else {
-      <h4 style={{ color: grey }} />;
-    }
-  };
-
   render() {
     return (
       <React.Fragment>
