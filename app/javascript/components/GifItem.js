@@ -1,11 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Button } from "react-bootstrap"
 
-const GifItem = ({gif, gifSelect}) => {
+const GifItem = ({gif, gifSelect, border}) => {
   return (
-    <div className="gif-item" onClick={() => gifSelect(gif)}>
+    <Button className="gif-item" onClick={() => gifSelect(gif)}>
       <img src={gif.media[0].tinygif.url} />
-    </div>
+    </Button>
   )
 };
 
