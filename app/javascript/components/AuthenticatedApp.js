@@ -21,8 +21,8 @@ import Upvote from "./Upvote";
 class AuthenticatedApp extends React.Component {
   render() {
     return (
-      <Router>
-        <React.Fragment>
+      <React.Fragment>
+        <Router>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <button
               className="navbar-toggler"
@@ -59,11 +59,19 @@ class AuthenticatedApp extends React.Component {
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/confess" component={Confess} />
-            <Route path="/confessions" component={Confessions} />
-            <Route path="/" component={Home} />
+            <Route
+              path="/confessions"
+              render={props => (
+                <Confessions
+                  current_user={this.props.current_user}
+                  isAuthed={true}
+                />
+              )}
+            />
+            <Route exact path="/" component={Home} />
           </Switch>
-        </React.Fragment>
-      </Router>
+        </Router>
+      </React.Fragment>
     );
   }
 }
