@@ -29,6 +29,7 @@ class Confessions extends React.Component {
     const { id } = this.props.current_user;
     return (
       <React.Fragment>
+      <div id="all" class="d-flex flex-wrap">
         {confessions.map((confession, index) => {
           if (confession.user_id === id) {
             return (
@@ -44,6 +45,7 @@ class Confessions extends React.Component {
             console.log("Nothing to Display");
           }
         })}
+      </div>
       </React.Fragment>
     );
   }
