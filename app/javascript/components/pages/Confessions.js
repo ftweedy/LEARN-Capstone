@@ -4,12 +4,12 @@ import { Card, Container, Button } from "react-bootstrap";
 import Upvote from "../Upvote";
 
 class Confessions extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      confessions: []
-    };
-  }
+    constructor(props){
+        super(props)
+        this.state = {
+            confessions: []
+        }
+    }
 
   handleDeleteConfession = (confession) => {
     const BASE = "http://localhost:3000";
@@ -39,7 +39,7 @@ class Confessions extends React.Component {
       });
   }
 
-  render() {
+    render() {
     const { confessions } = this.state;
     const { id } = this.props.current_user;
     return (
@@ -65,6 +65,7 @@ class Confessions extends React.Component {
       </React.Fragment>
     );
   }
+
 }
 
-export default Confessions;
+export default Confessions
