@@ -51,9 +51,15 @@ class Confessions extends React.Component {
               <Card style={{ width: "18rem" }} key={index}>
                 <Card.Img variant="top" src={confession.gif_url} />
                 <Card.Body>
-                <Upvote />
+                <table><tb><tr>
+                <td>
                   <Card.Text>{confession.name}</Card.Text>
                   <Button onClick={()=>this.handleDeleteConfession(confession)}>Delete</Button>
+                </td>
+                <td>
+                  <Upvote />
+                </td>
+                </tr></tb></table>
                 </Card.Body>
               </Card>
             );
