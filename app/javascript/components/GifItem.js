@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 const GifItem = ({gif, gifSelect}) => {
   return (
     <div className="gif-item" onClick={() => gifSelect(gif)}>
-      <img src={gif.images.downsized.url} />
+      <img src={gif.media[0].tinygif.url} />
     </div>
   )
 };
