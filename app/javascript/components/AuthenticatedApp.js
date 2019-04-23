@@ -36,7 +36,6 @@ class AuthenticatedApp extends React.Component {
         </Navbar.Collapse>
       </Navbar>
 
-
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/confess" component={Confess} />

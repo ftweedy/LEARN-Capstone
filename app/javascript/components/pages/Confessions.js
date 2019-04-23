@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card, Button } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 import Upvote from "../Upvote";
 
 class Confessions extends React.Component {
@@ -29,21 +29,29 @@ class Confessions extends React.Component {
     const { id } = this.props.current_user;
     return (
       <React.Fragment>
+      <Container>
+      <Row>
         {confessions.map((confession, index) => {
           if (confession.user_id === id) {
             return (
+              <Row>
+              <Col key={index}>
               <Card style={{ width: "18rem" }} key={index}>
-                <Upvote />
                 <Card.Img variant="top" src={confession.gif_url} />
                 <Card.Body>
+                <Upvote />
                   <Card.Text>{confession.name}</Card.Text>
                 </Card.Body>
               </Card>
+              </Col>
+              </Row>
             );
           } else {
             console.log("Nothing to Display");
           }
         })}
+        </Row>
+        </Container>
       </React.Fragment>
     );
   }
