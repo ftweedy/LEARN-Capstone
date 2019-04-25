@@ -1,6 +1,6 @@
 class ConfessionsController < ActionController::API
   before_action :set_confession, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: :index
+  # before_action :authenticate_user!, except: :index
 
     def index
       confessions = Confession.all
@@ -13,14 +13,17 @@ class ConfessionsController < ActionController::API
     end
 
     def create
-      confession = current_user.confessions.create(confession_params)
+      # for testing purposes
+      confession = Confession.create(confession_params)
+
+      # for official execution
+      # confession = current_user.confessions.create(confession_params)
 
       if confession.save
         render json: confession
       else
         render json: confession.errors.full_messages
       end
-
     end
 
     def update
