@@ -121,6 +121,25 @@
   row-gap: 10px;
 }
 
+#centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+#centered-horizontal {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%)
+}
+
+.centered-horizontal {
+  /* position: fixed; */
+  left: 50%;
+  transform: translate(-50%)
+}
+
 .submit {
   display: flex;
   justify-content: center;
