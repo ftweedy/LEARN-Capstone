@@ -14,10 +14,10 @@ class ConfessionsController < ActionController::API
 
     def create
       # for testing purposes
-      confession = Confession.create(confession_params)
+      # confession = Confession.create(confession_params)
 
       # for official execution
-      # confession = current_user.confessions.create(confession_params)
+      confession = current_user.confessions.create(confession_params)
 
       if confession.save
         render json: confession
