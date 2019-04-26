@@ -25,7 +25,7 @@ class AuthenticatedApp extends React.Component {
       <Router>
         <Navbar bg="light" expand="lg">
           <Navbar.Brand><Link to="/home">Confessr</Link></Navbar.Brand>
-            <Navbar.Collapse id="responsive-navbar-nav" class="navbar-collapse-lg">
+            <Navbar.Collapse id="responsive-navbar-nav" className="navbar-collapse-lg">
               <Nav >
                 <Navbar.Brand><Link to="/home" className="btn btn-outline-success">Home</Link></Navbar.Brand>
                 <Navbar.Brand><Link to="/confess" className="btn btn-outline-success">Confess</Link></Navbar.Brand>
