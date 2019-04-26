@@ -57,10 +57,11 @@ class Confess extends React.Component {
 
   render() {
     const { name, gif_url } = this.state.form;
+
     return (
       <div>
         <h1>Confess Here</h1>
-        <Form>
+        <Form action='/home'>
           <Form.Control
             className="form"
             type="text"
