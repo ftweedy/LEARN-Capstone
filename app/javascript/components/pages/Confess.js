@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import GifList from "../GifList";
 import SearchBar from "../SearchBar";
-import { Form, Button } from "react-bootstrap";
+import { Button, Checkbox, Form, Input } from 'semantic-ui-react'
 import request from "superagent";
 
 class Confess extends React.Component {
@@ -45,10 +45,7 @@ class Confess extends React.Component {
   };
 
   handleTermChange = term => {
-    const url = `https://api.tenor.com/v1/search?tag=${term.replace(
-      /\s/g,
-      "+"
-    )}&key=5N8TMAMBVVDJ&limit=13`;
+    const url = `https://api.tenor.com/v1/search?tag=${term.replace(/\s/g,"+")}&key=5N8TMAMBVVDJ&limit=13`;
 
     request.get(url, (err, res) => {
       this.setState({ gifs: res.body.results });
@@ -59,32 +56,25 @@ class Confess extends React.Component {
     const { name, gif_url } = this.state.form;
 
     return (
-      <div>
-        <h1>Confess Here</h1>
-        <Form action='/home'>
-          <Form.Control
-            className="form"
-            type="text"
+      <React.Fragment>
+      <div className='grid'>
+        <Form action={'/home'}>
+          <Form.Field
+            control={Input}
             name="name"
             placeholder="Enter Your Confession"
             onChange={this.handleFormChange}
             value={name}
           />
-          <br/>
-          <div className="submit">
-            <Button
-              type="submit"
-              onClick={() => this.handleNewConfession(this.state.form)}
-            >
-              Submit
-            </Button>
-          </div>
+          <Button type="submit" animated="fade" onClick={()=>this.handleNewConfession(this.state.form)}>
+            <Button.Content visible>Submit Your Confession</Button.Content>
+            <Button.Content hidden>There's No Turning Back!</Button.Content>
+          </Button>
         </Form>
-        <br />
-        <SearchBar onTermChange={term => this.handleTermChange(term)} />
-        <br />
-        <GifList gifs={this.state.gifs} gifSelect={this.handleGifSelect} />
+      <SearchBar onTermChange={term => this.handleTermChange(term)} />
+      <GifList gifs={this.state.gifs} gifSelect={this.handleGifSelect} />
       </div>
+      </React.Fragment>
     );
   }
 }

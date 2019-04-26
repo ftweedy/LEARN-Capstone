@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Form } from "react-bootstrap"
+import { Form, Input } from "semantic-ui-react"
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -20,9 +20,8 @@ class SearchBar extends React.Component {
     return (
       <React.Fragment>
         <Form>
-            <Form.Control
-              className="form"
-              type="text"
+            <Form.Field
+              control={Input}
               placeholder="Enter a keyword to find a GIF!"
               onChange={event => this.onInputChange(event.target.value)}
             />

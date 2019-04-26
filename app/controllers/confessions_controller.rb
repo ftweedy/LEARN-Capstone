@@ -3,7 +3,7 @@ class ConfessionsController < ActionController::API
   # before_action :authenticate_user!, except: :index
 
     def index
-      confessions = Confession.all
+      confessions = Confession.all.order("created_at DESC")
 
       render json: confessions
     end
