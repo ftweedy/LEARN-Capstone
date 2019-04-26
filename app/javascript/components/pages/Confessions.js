@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card, Container, Button } from "react-bootstrap";
+import { Card, Icon, Image, Grid, Button } from 'semantic-ui-react'
 import Upvote from "../Upvote";
 
 class Confessions extends React.Component {
@@ -44,29 +44,26 @@ class Confessions extends React.Component {
     const { id } = this.props.current_user;
     return (
       <React.Fragment>
-      <div id="all" className="d-flex flex-wrap">
+      <div className="grid">
+      <Grid relaxed columns={5}>
         {confessions.map((confession, index) => {
           if (confession.user_id === id) {
             return (
-              <Card style={{ width: "18rem" }} key={index}>
-                <Card.Img variant="top" src={confession.gif_url} />
-                <Card.Body>
-                <table><tb><tr>
-                <td>
-                  <Card.Text>{confession.name}</Card.Text>
-                  <Button onClick={()=>this.handleDeleteConfession(confession)}>Delete</Button>
-                </td>
-                <td>
-                  <Upvote />
-                </td>
-                </tr></tb></table>
-                </Card.Body>
-              </Card>
-            );
+              <Grid.Column key={confession.id}>
+                <Card>
+                  <Card.Content>
+                  <Image src={confession.gif_url} />
+                    <Card.Header>{confession.name}</Card.Header>
+                    <Button onClick={()=>this.handleDeleteConfession(confession)}>Delete</Button>
+                  </Card.Content>
+                </Card>
+              </Grid.Column>
+            )
           } else {
             console.log("Nothing to Display");
           }
         })}
+      </Grid>
       </div>
       </React.Fragment>
     );
