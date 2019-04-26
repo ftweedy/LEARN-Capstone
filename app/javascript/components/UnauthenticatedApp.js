@@ -29,7 +29,7 @@ class UnauthenticatedApp extends React.Component {
     const { confessions } = this.state
     return(
     <React.Fragment>
-    <div id="all" class="d-flex flex-wrap">
+    <div id="all" className="d-flex flex-wrap">
       {confessions.map((confession, index) => {
         return (
           <Card style={{ width: '18rem' }} key={index}>
