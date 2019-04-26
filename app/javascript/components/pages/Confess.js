@@ -54,6 +54,7 @@ class Confess extends React.Component {
 
   render() {
     const { name, gif_url } = this.state.form;
+
     return (
       <React.Fragment>
       <div className='grid'>
