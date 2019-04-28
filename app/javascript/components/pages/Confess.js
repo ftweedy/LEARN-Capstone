@@ -57,7 +57,7 @@ class Confess extends React.Component {
 
     return (
       <React.Fragment>
-      <div className='grid'>
+      <div className='form'>
         <Form action={'/home'}>
           <Form.Field
             control={Input}
