@@ -25,7 +25,6 @@ class UnauthenticatedApp extends React.Component {
 
 
   handleUserLogin = (user) => {
-    console.log(user);
     const BASE = "http://localhost:3000"
     return fetch(BASE + "/users/sign_in", {
       body: JSON.stringify(user),
@@ -38,7 +37,21 @@ class UnauthenticatedApp extends React.Component {
 
   handleSignUp = () => {
     this.setState({ show: false, signupModalShow: true})
+  }
 
+  handleSignUpCreate = (user) => {
+    const BASE = "http://localhost:3000"
+    return fetch(BASE + "/users", {
+      body: JSON.stringify(user),
+      headers: {'Content-Type': 'application/json'},
+      method: "POST"
+    }).then((resp)=>{
+      if (resp.redirected === true){
+        window.location.replace(BASE + "/protected");
+      } else {
+        alert("Signup information incorrect")
+      }
+    })
   }
 
   render() {
@@ -79,6 +92,7 @@ class UnauthenticatedApp extends React.Component {
           <SignupModal
             open={this.state.signupModalShow}
             onClose={this.handleClose}
+            signUp={this.handleSignUpCreate}
           />
 
           <Switch>
