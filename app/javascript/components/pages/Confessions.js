@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card, Icon, Image, Grid, Button } from 'semantic-ui-react'
 import Upvote from "../Upvote";
+import { Button } from "semantic-ui-react"
 
 class Confessions extends React.Component {
     constructor(props){
@@ -44,26 +44,28 @@ class Confessions extends React.Component {
     const { id } = this.props.current_user;
     return (
       <React.Fragment>
-      <div className="grid">
-      <Grid relaxed columns={5}>
+      <div className="ui container">
+        <div className="ui four column doubling stackable masonry grid">
         {confessions.map((confession, index) => {
           if (confession.user_id === id) {
             return (
-              <Grid.Column key={confession.id}>
-                <Card>
-                  <Card.Content>
-                  <Image src={confession.gif_url} />
-                    <Card.Header>{confession.name}</Card.Header>
-                    <Button onClick={()=>this.handleDeleteConfession(confession)}>Delete</Button>
-                  </Card.Content>
-                </Card>
-              </Grid.Column>
+              <div className="column" key={confession.id}>
+                <div className="ui fluid card">
+                  <div className="image">
+                    <img src={confession.gif_url}/>
+                  </div>
+                  <div className="content">
+                    <a className="header">{confession.name}</a>
+                  </div>
+                  <Button onClick={()=>this.handleDeleteConfession(confession)}>Delete</Button>
+                </div>
+              </div>
             )
           } else {
-            console.log("Nothing to Display");
+            console.log("This Post Belongs To Another User!");
           }
         })}
-      </Grid>
+        </div>
       </div>
       </React.Fragment>
     );

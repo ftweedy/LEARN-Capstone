@@ -1,11 +1,1 @@
 <%= react_component('AuthenticatedApp', current_user: current_user) %>
-
-    <div class="collapse navbar-collapse" id="navbarColor03">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <%= button_to('Logout', destroy_user_session_path, method: :delete) %>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>

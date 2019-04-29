@@ -13,6 +13,15 @@ class AuthenticatedApp extends React.Component {
       this.state = {}
   }
 
+  handleLogout = () => {
+    const link = document.createElement('a');
+    link.setAttribute('href', '/users/sign_out');
+    link.setAttribute('rel', 'nofollow');
+    link.setAttribute('data-method', 'delete');
+    document.body.appendChild(link);
+    link.click();
+  }
+
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
@@ -43,7 +52,7 @@ class AuthenticatedApp extends React.Component {
             <Menu.Item
               name='logout'
               active={activeItem === 'logout'}
-              onClick={this.handleItemClick}
+              onClick={this.handleLogout}
             />
           </Menu>
 
