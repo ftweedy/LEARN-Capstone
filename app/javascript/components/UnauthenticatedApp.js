@@ -34,6 +34,7 @@ class UnauthenticatedApp extends React.Component {
     }).then((resp)=>{
       console.log(resp);
     })
+  }
 
   handleSignUp = () => {
     this.setState({ show: false, signupModalShow: true})
@@ -75,8 +76,8 @@ class UnauthenticatedApp extends React.Component {
             handleSignUp={this.handleSignUp}
           />
 
-          <SignupModal 
-            open={this.state.signupModalShow} 
+          <SignupModal
+            open={this.state.signupModalShow}
             onClose={this.handleClose}
           />
 
