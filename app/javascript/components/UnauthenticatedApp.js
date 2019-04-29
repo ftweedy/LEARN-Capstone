@@ -21,6 +21,18 @@ class UnauthenticatedApp extends React.Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  handleUserLogin = (user) => {
+    console.log(user);
+    const BASE = "http://localhost:3000"
+    return fetch(BASE + "/users/sign_in", {
+      body: JSON.stringify(user),
+      headers: {'Content-Type': 'application/json'},
+      method: "POST"
+    }).then((resp)=>{
+      console.log(resp);
+    })
+  }
+
   render() {
     const { activeItem } = this.state
     return(
@@ -29,7 +41,6 @@ class UnauthenticatedApp extends React.Component {
           <Menu widths={4} fixed='top'>
             <Menu.Item
               name='Home'
-              color='red'
               active={activeItem === 'home'}
               onClick={this.handleItemClick}
               as={Link} to='/home'
@@ -53,7 +64,11 @@ class UnauthenticatedApp extends React.Component {
             />
           </Menu>
 
-          <LoginModal open={this.state.show} onClose={this.handleClose}/>
+          <LoginModal
+            open={this.state.show}
+            onClose={this.handleClose}
+            handleUserLogin={this.handleUserLogin}
+          />
 
           <Switch>
             <Route path="/protected" component={Home} />
