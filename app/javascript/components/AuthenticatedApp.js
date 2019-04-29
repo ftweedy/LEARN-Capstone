@@ -22,6 +22,7 @@ class AuthenticatedApp extends React.Component {
   render() {
     return (
       <React.Fragment>
+      <body background="Doors.jpg">
       <Router>
         <Navbar bg="light" expand="lg">
           <Navbar.Brand><Link to="/home">Confessr</Link></Navbar.Brand>
@@ -49,6 +50,7 @@ class AuthenticatedApp extends React.Component {
           <Route exact path="/" component={Home} />
         </Switch>
       </Router>
+      </body>
       </React.Fragment>
     );
   }

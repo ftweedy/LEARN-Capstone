@@ -35,14 +35,14 @@ class Home extends React.Component {
               <Card style={{ width: "18rem" }} key={index}>
                 <Card.Img variant="top" src={confession.gif_url} />
                 <Card.Body>
-                <table><tb><tr>
+                <table><tbody><tr>
                 <td>
                   <Card.Text>{confession.name}</Card.Text>
                 </td>
                 <td>
                   <Upvote />
                 </td>
-                </tr></tb></table>
+                </tr></tbody></table>
                 </Card.Body>
               </Card>
             )})
