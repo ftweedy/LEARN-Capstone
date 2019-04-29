@@ -40,7 +40,7 @@ class Home extends React.Component {
                   <img src={confession.gif_url}/>
                 </div>
                 <div className="content">
-                  <a className="header">{confession.name}</a>
+                  <p className="header">{confession.name}</p>
                 </div>
               </div>
             </div>
