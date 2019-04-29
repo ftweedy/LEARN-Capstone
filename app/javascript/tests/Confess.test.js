@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AuthenticatedApp from '../components/AuthenticatedApp';
+import Confess from '../components/pages/Confess';
 
-it('Authenticated renders', () => {
+it('Confess renders', () => {
   const div = document.createElement('div');
   fetch.mockResponse(JSON.stringify([{name: 'test'}, {name: 'test2'}]))
 
-  ReactDOM.render(<AuthenticatedApp/>, div);
+  ReactDOM.render(<Confess/>, div);
 });

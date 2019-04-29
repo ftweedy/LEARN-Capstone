@@ -45,7 +45,7 @@ class LoginModal extends React.Component {
           <Button basic color='blue' inverted onClick={()=>handleUserLogin(this.state)}>
             Log-In
           </Button>
-          <Button basic color='green' inverted>
+          <Button onClick={this.props.handleSignUp} basic color='green' inverted>
             Sign-Up
           </Button>
         </Modal.Actions>
