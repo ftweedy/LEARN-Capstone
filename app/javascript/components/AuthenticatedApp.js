@@ -32,7 +32,6 @@ class AuthenticatedApp extends React.Component {
           <Menu widths={4} fixed='top'>
             <Menu.Item
               name='Home'
-              color='red'
               active={activeItem === 'home'}
               onClick={this.handleItemClick}
               as={Link} to='/home'
