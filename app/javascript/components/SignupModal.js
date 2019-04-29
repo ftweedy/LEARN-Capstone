@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Header, Icon, Modal, Form } from 'semantic-ui-react'
 
-class LoginModal extends React.Component {
+class SignupModal extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -11,7 +11,7 @@ class LoginModal extends React.Component {
   render () {
     return (
       <Modal open={this.props.open} onClose={this.props.onClose} basic size='small'>
-        <Header content='Ready To Confess?' />
+        <Header content='Ready To Signup?' />
         <Modal.Content>
           <Form inverted>
             <Form.Field required={true}>
@@ -25,10 +25,7 @@ class LoginModal extends React.Component {
           </Form>
         </Modal.Content>
         <Modal.Actions>
-          <Button basic color='blue' inverted>
-            Log-In
-          </Button>
-          <Button onClick={this.props.handleSignUp} basic color='green' inverted>
+          <Button basic color='green' inverted>
             Sign-Up
           </Button>
         </Modal.Actions>
@@ -36,5 +33,4 @@ class LoginModal extends React.Component {
     )
   }
 }
-
-export default LoginModal
+export default SignupModal
