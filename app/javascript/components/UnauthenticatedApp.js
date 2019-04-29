@@ -32,7 +32,7 @@ class UnauthenticatedApp extends React.Component {
       headers: {'Content-Type': 'application/json'},
       method: "POST"
     }).then((resp)=>{
-      console.log(resp);
+      window.location.replace(BASE + '/home')
     })
   }
 
