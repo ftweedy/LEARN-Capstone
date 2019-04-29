@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card, Container, Button } from "react-bootstrap";
 import Upvote from "../Upvote";
+import { Button } from "semantic-ui-react"
 
 class Confessions extends React.Component {
     constructor(props){
@@ -44,29 +44,28 @@ class Confessions extends React.Component {
     const { id } = this.props.current_user;
     return (
       <React.Fragment>
-      <div id="all" className="d-flex flex-wrap">
+      <div className="ui container">
+        <div className="ui four column doubling stackable masonry grid">
         {confessions.map((confession, index) => {
           if (confession.user_id === id) {
             return (
-              <Card style={{ width: "18rem" }} key={index}>
-                <Card.Img variant="top" src={confession.gif_url} />
-                <Card.Body>
-                <table><tbody><tr>
-                <td>
-                  <Card.Text>{confession.name}</Card.Text>
+              <div className="column" key={confession.id}>
+                <div className="ui fluid card">
+                  <div className="image">
+                    <img src={confession.gif_url}/>
+                  </div>
+                  <div className="content">
+                    <a className="header">{confession.name}</a>
+                  </div>
                   <Button onClick={()=>this.handleDeleteConfession(confession)}>Delete</Button>
-                </td>
-                <td>
-                  <Upvote />
-                </td>
-                </tr></tbody></table>
-                </Card.Body>
-              </Card>
-            );
+                </div>
+              </div>
+            )
           } else {
-            console.log("Nothing to Display");
+            console.log("This Post Belongs To Another User!");
           }
         })}
+        </div>
       </div>
       </React.Fragment>
     );
