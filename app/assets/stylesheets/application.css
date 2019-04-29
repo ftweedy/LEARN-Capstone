@@ -150,7 +150,7 @@
 
 .masonry.grid {
   display: block;
-  padding-top: 5em;
+  padding-top: 8em;
   text-align: center;
 }
 
@@ -175,4 +175,12 @@
        -moz-column-count: 4;
             column-count: 4;
   }
+}
+
+#logo {
+  width: 35%;
+}
+
+.menuItem {
+  font-size: 25px;
 }

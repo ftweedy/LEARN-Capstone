@@ -6,6 +6,8 @@ import Confessions from "./pages/Confessions";
 import Confess from "./pages/Confess";
 import Home from "./pages/Home";
 import Upvote from "./Upvote";
+import Confessor from "./images/confessor.png"
+
 
 class AuthenticatedApp extends React.Component {
   constructor(props){
@@ -35,20 +37,25 @@ class AuthenticatedApp extends React.Component {
               active={activeItem === 'home'}
               onClick={this.handleItemClick}
               as={Link} to='/home'
-            />
+            >
+              <img id="logo" src={Confessor}/>
+            </Menu.Item>
             <Menu.Item
+              className="menuItem"
               name='confess'
               active={activeItem === 'confess'}
               onClick={this.handleItemClick}
               as={Link} to='/confess'
             />
             <Menu.Item
+              className="menuItem"
               name='my confessions'
               active={activeItem === 'my confessions'}
               onClick={this.handleItemClick}
               as={Link} to='/myconfessions'
             />
             <Menu.Item
+              className="menuItem"
               name='logout'
               active={activeItem === 'logout'}
               onClick={this.handleLogout}

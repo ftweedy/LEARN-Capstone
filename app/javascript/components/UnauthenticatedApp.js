@@ -7,6 +7,7 @@ import Confess from "./pages/Confess";
 import Home from "./pages/Home";
 import LoginModal from "./LoginModal";
 import SignupModal from "./SignupModal"
+import Confessor from "./images/confessor.png"
 
 class UnauthenticatedApp extends React.Component {
   constructor(props){
@@ -64,18 +65,23 @@ class UnauthenticatedApp extends React.Component {
               name='Home'
               active={activeItem === 'home'}
               onClick={this.handleShow}
-            />
+            >
+              <img id="logo" src={Confessor}/>
+            </Menu.Item>
             <Menu.Item
+              className="menuItem"
               name='confess'
               active={activeItem === 'confess'}
               onClick={this.handleShow}
             />
             <Menu.Item
+              className="menuItem"
               name='my confessions'
               active={activeItem === 'my confessions'}
               onClick={this.handleShow}
             />
             <Menu.Item
+              className="menuItem"
               name='login'
               active={activeItem === 'login'}
               onClick={this.handleShow}

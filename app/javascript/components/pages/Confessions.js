@@ -65,6 +65,9 @@ class Confessions extends React.Component {
             console.log("This Post Belongs To Another User!");
           }
         })}
+          <div className="form">
+            <h1>You Need To Confess!</h1>
+          </div>
         </div>
       </div>
       </React.Fragment>
