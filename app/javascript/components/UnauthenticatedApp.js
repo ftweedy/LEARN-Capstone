@@ -32,7 +32,11 @@ class UnauthenticatedApp extends React.Component {
       headers: {'Content-Type': 'application/json'},
       method: "POST"
     }).then((resp)=>{
-      window.location.replace(BASE + '/home')
+      if (resp.redirected === true){
+        window.location.replace(BASE + "/protected");
+      } else {
+        alert("Sign in information incorrect")
+      }
     })
   }
 
@@ -102,7 +106,7 @@ class UnauthenticatedApp extends React.Component {
           />
 
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route path="/" component={Home} />
           </Switch>
         </Router>
       </React.Fragment>
