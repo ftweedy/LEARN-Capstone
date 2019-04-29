@@ -31,7 +31,7 @@ class UnauthenticatedApp extends React.Component {
       headers: {'Content-Type': 'application/json'},
       method: "POST"
     }).then((resp)=>{
-      window.location.replace("http://localhost:3000/protected");
+      window.location.replace(BASE + '/home')
     })
   }
 
