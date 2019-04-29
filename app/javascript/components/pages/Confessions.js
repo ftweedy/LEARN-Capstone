@@ -44,18 +44,18 @@ class Confessions extends React.Component {
     const { id } = this.props.current_user;
     return (
       <React.Fragment>
-      <div class="ui container">
-        <div class="ui four column doubling stackable masonry grid">
+      <div className="ui container">
+        <div className="ui four column doubling stackable masonry grid">
         {confessions.map((confession, index) => {
           if (confession.user_id === id) {
             return (
-              <div class="column">
-                <div class="ui fluid card">
-                  <div class="image">
+              <div className="column" key={confession.id}>
+                <div className="ui fluid card">
+                  <div className="image">
                     <img src={confession.gif_url}/>
                   </div>
-                  <div class="content">
-                    <a class="header">{confession.name}</a>
+                  <div className="content">
+                    <a className="header">{confession.name}</a>
                   </div>
                   <Button onClick={()=>this.handleDeleteConfession(confession)}>Delete</Button>
                 </div>

@@ -30,17 +30,17 @@ class Home extends React.Component {
     const { confessions, activeItem } = this.state
     return(
     <React.Fragment>
-    <div class="ui container">
-      <div class="ui four column doubling stackable masonry grid">
+    <div className="ui container">
+      <div className="ui four column doubling stackable masonry grid">
       {confessions.map((confession, index) => {
           return (
-            <div class="column">
-              <div class="ui fluid card">
-                <div class="image">
+            <div className="column" key={confession.id}>
+              <div className="ui fluid card">
+                <div className="image">
                   <img src={confession.gif_url}/>
                 </div>
-                <div class="content">
-                  <a class="header">{confession.name}</a>
+                <div className="content">
+                  <a className="header">{confession.name}</a>
                 </div>
               </div>
             </div>
