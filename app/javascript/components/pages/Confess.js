@@ -19,16 +19,21 @@ class Confess extends React.Component {
 
   handleNewConfession = confessionForm => {
     const BASE = "http://localhost:3000";
-    return fetch(BASE + "/confessions", {
-      body: JSON.stringify(confessionForm),
-      headers: {
-        "Content-Type": "application/json"
-      },
-      method: "POST"
-    }).then(resp => {
-      let json = resp.json();
-      return json;
-    });
+    if (this.state.form.name != "" && this.state.form.gif_url != ""){
+        return fetch(BASE + "/confessions", {
+          body: JSON.stringify(confessionForm),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          method: "POST"
+        }).then(resp => {
+          let json = resp.json();
+          return json;
+        });
+    }
+    else {
+        alert("Both fields must be filled");
+    }
   };
 
   handleFormChange = event => {
