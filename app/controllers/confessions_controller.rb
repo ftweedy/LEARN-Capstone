@@ -26,7 +26,20 @@ class ConfessionsController < ActionController::API
       end
     end
 
+    def upvote
+      confession = Confession.find(params[:id])
+      confession.upvote!
+      render json: confession
+    end
+
+    def downvote
+      confession = Confession.find(params[:id])
+      confession.downvote!
+      render json: confession
+    end
+
     def update
+      confession = Confession.find(params[:id])
       if confession.update(confession_params)
         render json: confession
       else
@@ -49,6 +62,6 @@ class ConfessionsController < ActionController::API
 
       # Only allow a trusted parameter "white list" through.
       def confession_params
-        params.require(:confession).permit(:name, :gif_url)
+        params.require(:confession).permit(:name, :gif_url, :counter)
       end
   end
