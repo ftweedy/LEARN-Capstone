@@ -19,22 +19,27 @@ class Confess extends React.Component {
 
   handleNewConfession = confessionForm => {
     const BASE = "http://localhost:3000";
-    if (this.state.form.name != "" && this.state.form.gif_url != ""){
-        return fetch(BASE + "/confessions", {
-          body: JSON.stringify(confessionForm),
-          headers: {
-            "Content-Type": "application/json"
-          },
-          method: "POST"
-        }).then(resp => {
-          let json = resp.json();
-          return json;
-        });
+    const { name, gif_url } = this.state.form
+    if ((name !== "") && (gif_url !== "")){
+      return fetch(BASE + "/confessions", {
+        body: JSON.stringify(confessionForm),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      }).then(resp => {
+        let json = resp.json();
+        window.location.replace(BASE + "/protected");
+        return json;
+      });
+    } else {
+      if (name === ""){
+        alert("You must enter a confession.")
+      } else if (gif_url === ""){
+        alert("You must select a gif to show your shame.")
+      }
     }
-    else {
-        alert("Both fields must be filled");
-    }
-  };
+  }
 
   handleFormChange = event => {
     const { form } = this.state;
@@ -63,7 +68,7 @@ class Confess extends React.Component {
     return (
       <React.Fragment>
       <div className='form'>
-        <Form action={'/home'}>
+        <Form>
           <Form.Field
             control={Input}
             name="name"
