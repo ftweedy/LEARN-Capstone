@@ -2,38 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { green } from "ansi-colors";
 class Upvote extends React.Component {
-  state = {
-    count: 0
-  };
-
-  upvote = () => {
-    let newCount = this.state.count + 1;
-    this.setState({
-      count: newCount
-    });
-    this.upvote = () => {
-      this.onClick = null;
-    };
-  };
-
-  downvote = () => {
-    let newCount = this.state.count - 1;
-    this.setState({
-      count: newCount
-    });
-    this.downvote = () => {
-      this.onClick = null;
-    };
-  };
-
   render() {
+    // console.log(this.props.conf_id);
+    // console.log(this.props.counter);
     return (
       <React.Fragment>
         <button
           id="upButton"
           type="button"
           className="vote"
-          onClick={this.upvote}
+          onClick={this.props.upvoteHandler}
         >
           <svg className="upArrow" viewBox="0 0 11.5 6.4" xmlSpace="preserve">
             <path
@@ -43,12 +21,12 @@ class Upvote extends React.Component {
             />
           </svg>
         </button>
-        <h4 id="counter">{this.state.count}</h4>
+        <h4 id="counter">{this.props.counter}</h4>
         <button
           id="downButton"
           className="vote"
           type="button"
-          onClick={this.downvote}
+          onClick={this.props.downvoteHandler}
         >
           <svg
             className="downArrow"

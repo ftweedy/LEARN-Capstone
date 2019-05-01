@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-    resources :confessions #constraints: ->(request){ !request.format.html? }
+    resources :confessions do 
+      member do
+        put :upvote
+        put :downvote
+      end
+    end #constraints: ->(request){ !request.format.html? }
     devise_for :users
 
     authenticated :user do
