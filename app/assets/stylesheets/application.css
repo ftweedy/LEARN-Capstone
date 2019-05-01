@@ -150,7 +150,7 @@
 
 .masonry.grid {
   display: block;
-  padding-top: 8em;
+  padding-top: 5em;
   text-align: center;
   font-size: 15px;
 }
@@ -183,5 +183,9 @@
 }
 
 .menuItem {
-  font-size: 25px;
+  font-size: 1.65em;
+}
+
+.navBar{
+
 }

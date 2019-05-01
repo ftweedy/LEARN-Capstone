@@ -31,7 +31,7 @@ class AuthenticatedApp extends React.Component {
     return (
       <React.Fragment>
         <Router>
-          <Menu widths={4} fixed='top'>
+          <Menu widths={4} fixed='top' className="navBar">
             <Menu.Item
               name='Home'
               active={activeItem === 'home'}
@@ -41,21 +41,21 @@ class AuthenticatedApp extends React.Component {
               <img id="logo" src={Confessor}/>
             </Menu.Item>
             <Menu.Item
-              className="menuItem"
+              className="vertically fitted menuItem"
               name='confess'
               active={activeItem === 'confess'}
               onClick={this.handleItemClick}
               as={Link} to='/confess'
             />
             <Menu.Item
-              className="menuItem"
+              className="vertically fitted menuItem"
               name='my confessions'
               active={activeItem === 'my confessions'}
               onClick={this.handleItemClick}
               as={Link} to='/myconfessions'
             />
             <Menu.Item
-              className="menuItem"
+              className="vertically fitted menuItem"
               name='logout'
               active={activeItem === 'logout'}
               onClick={this.handleLogout}
