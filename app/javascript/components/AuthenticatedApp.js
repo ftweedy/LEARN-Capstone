@@ -32,7 +32,7 @@ class AuthenticatedApp extends React.Component {
     return (
       <React.Fragment>
         <Router>
-          <Menu widths={4} fixed='top' className="navBar">
+          <Menu widths={5} fixed='top' className="navBar">
             <Menu.Item
               name='Home'
               active={activeItem === 'home'}
