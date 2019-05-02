@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Confessions from "./pages/Confessions";
 import Confess from "./pages/Confess";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import Upvote from "./Upvote";
 import Confessor from "./images/confessor.png"
 
@@ -31,7 +32,7 @@ class AuthenticatedApp extends React.Component {
     return (
       <React.Fragment>
         <Router>
-          <Menu widths={4} fixed='top'>
+          <Menu widths={5} fixed='top'>
             <Menu.Item
               name='Home'
               active={activeItem === 'home'}
@@ -40,6 +41,13 @@ class AuthenticatedApp extends React.Component {
             >
               <img id="logo" src={Confessor}/>
             </Menu.Item>
+            <Menu.Item
+              className="menuItem"
+              name='about'
+              active={activeItem === 'about'}
+              onClick={this.handleItemClick}
+              as={Link} to="/about"
+            />
             <Menu.Item
               className="menuItem"
               name='confess'
@@ -65,6 +73,7 @@ class AuthenticatedApp extends React.Component {
           <Switch>
             <Route path="/protected" component={Home} />
             <Route path="/home" component={Home} />
+            <Route path="/about" component={About} />
             <Route path="/confess" component={Confess} />
             <Route
               path="/myconfessions"

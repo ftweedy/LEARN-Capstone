@@ -5,9 +5,10 @@ import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-ro
 import Confessions from "./pages/Confessions";
 import Confess from "./pages/Confess";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import LoginModal from "./LoginModal";
-import SignupModal from "./SignupModal"
-import Confessor from "./images/confessor.png"
+import SignupModal from "./SignupModal";
+import Confessor from "./images/confessor.png";
 
 class UnauthenticatedApp extends React.Component {
   constructor(props){
@@ -64,7 +65,7 @@ class UnauthenticatedApp extends React.Component {
     return(
       <React.Fragment>
         <Router>
-          <Menu widths={4} fixed='top'>
+          <Menu widths={5} fixed='top'>
             <Menu.Item
               name='Home'
               active={activeItem === 'home'}
@@ -72,6 +73,13 @@ class UnauthenticatedApp extends React.Component {
             >
               <img id="logo" src={Confessor}/>
             </Menu.Item>
+            <Menu.Item
+              className="menuItem"
+              name='about'
+              active={activeItem === 'about'}
+              onClick={this.handleItemClick}
+              as={Link} to="/about"
+            />
             <Menu.Item
               className="menuItem"
               name='confess'
@@ -106,7 +114,8 @@ class UnauthenticatedApp extends React.Component {
           />
 
           <Switch>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
           </Switch>
         </Router>
       </React.Fragment>
