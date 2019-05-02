@@ -26,14 +26,13 @@ class UnauthenticatedApp extends React.Component {
 
 
   handleUserLogin = (user) => {
-    const BASE = "http://localhost:3000"
-    return fetch(BASE + "/users/sign_in", {
+    return fetch("/users/sign_in", {
       body: JSON.stringify(user),
       headers: {'Content-Type': 'application/json'},
       method: "POST"
     }).then((resp)=>{
       if (resp.redirected === true){
-        window.location.replace(BASE + "/protected");
+        window.location.replace("/protected");
       } else {
         alert("Sign in information incorrect")
       }
@@ -45,14 +44,13 @@ class UnauthenticatedApp extends React.Component {
   }
 
   handleSignUpCreate = (user) => {
-    const BASE = "http://localhost:3000"
-    return fetch(BASE + "/users", {
+    return fetch("/users", {
       body: JSON.stringify(user),
       headers: {'Content-Type': 'application/json'},
       method: "POST"
     }).then((resp)=>{
       if (resp.redirected === true){
-        window.location.replace(BASE + "/protected");
+        window.location.replace("/protected");
       } else {
         alert("Signup information incorrect")
       }

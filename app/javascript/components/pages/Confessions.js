@@ -12,8 +12,7 @@ class Confessions extends React.Component {
     }
 
   handleDeleteConfession = (confession) => {
-    const BASE = "http://localhost:3000";
-    return fetch(BASE + `/confessions/${confession.id}`, {
+    return fetch(`/confessions/${confession.id}`, {
       method: "DELETE"
     })
       .then((resp) => {
