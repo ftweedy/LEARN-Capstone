@@ -18,10 +18,9 @@ class Confess extends React.Component {
   }
 
   handleNewConfession = confessionForm => {
-    const BASE = "http://localhost:3000";
     const { name, gif_url } = this.state.form
     if ((name !== "") && (gif_url !== "")){
-      return fetch(BASE + "/confessions", {
+      return fetch("/confessions", {
         body: JSON.stringify(confessionForm),
         headers: {
           "Content-Type": "application/json"
@@ -29,7 +28,7 @@ class Confess extends React.Component {
         method: "POST"
       }).then(resp => {
         let json = resp.json();
-        window.location.replace(BASE + "/protected");
+        window.location.replace("/protected");
         return json;
       });
     } else {

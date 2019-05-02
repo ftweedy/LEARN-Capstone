@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { green } from "ansi-colors";
 class Upvote extends React.Component {
   render() {
-    // console.log(this.props.conf_id);
-    // console.log(this.props.counter);
     return (
       <React.Fragment>
         <button

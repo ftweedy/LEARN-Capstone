@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Card, Image, Grid, Button, Menu } from "semantic-ui-react";
 import Upvote from "../Upvote";
+import DropdownSort from "../DropdownSort"
 
 class Home extends React.Component {
   constructor(props) {
@@ -30,9 +31,26 @@ class Home extends React.Component {
       });
   }
 
+  sortingOldest = () => {
+    const { confessions } = this.state
+    confessions.sort(function(a,b){
+      let dateA = new Date(a.created_at), dateB = new Date(b.created_at)
+      return dateA - dateB
+    })
+    this.setState({confessions: confessions})
+  }
+
+  sortingNewest = () => {
+    const { confessions } = this.state
+    confessions.sort(function(a,b){
+      let dateA = new Date(a.created_at), dateB = new Date(b.created_at)
+      return dateB - dateA
+    })
+    this.setState({confessions: confessions})
+  }
+
   handleUpvote = id => {
-    const BASE = "http://localhost:3000";
-    fetch(BASE + `/confessions/${id}/upvote`, {
+    fetch(`/confessions/${id}/upvote`, {
       headers: {
         "Content-Type": "application/json"
       },
@@ -56,8 +74,7 @@ class Home extends React.Component {
   };
 
   handleDownvote = id => {
-    const BASE = "http://localhost:3000";
-    fetch(BASE + `/confessions/${id}/downvote`, {
+    fetch(`/confessions/${id}/downvote`, {
       headers: {
         "Content-Type": "application/json"
       },
@@ -86,6 +103,7 @@ class Home extends React.Component {
       <React.Fragment>
         <div className="ui container">
           <div className="ui four column doubling stackable masonry grid">
+            <DropdownSort sortingNewest={this.sortingNewest} sortingOldest={this.sortingOldest}/>
             {confessions.map((confession, index) => {
               return (
                 <div className="column" key={confession.id}>
