@@ -66,8 +66,8 @@ class Confessions extends React.Component {
           }
         })}
           <div className="form">
-            <h1>You Need To Confess!</h1>
-          </div>
+            <h1>You Need To Confess</h1>
+          </div>                                            
         </div>
       </div>
       </React.Fragment>
