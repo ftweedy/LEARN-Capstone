@@ -71,7 +71,7 @@ class Confessions extends React.Component {
           } else {
             console.log("This Post Belongs To Another User!");
           }
-        })}
+        })}                                           
         {isEmpty === confessions.length &&
               <h1>You Need To Confess!</h1>
         }
