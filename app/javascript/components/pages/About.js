@@ -43,7 +43,7 @@ class About extends React.Component {
           <Image src={Maria}/>
           <Card.Content>
             <Card.Header>Maria Dougherty</Card.Header>
-            <Card.Description>Placeholder Text</Card.Description>
+            <Card.Description>Crazy about coding!</Card.Description>
           </Card.Content>
           <Card.Content extra>
           <ul>
