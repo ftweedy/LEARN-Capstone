@@ -81,8 +81,8 @@
 
 #counter {
   font-family: sans-serif;
-  padding-left: 17px;
-  padding-top: 5px;
+  font-size: 2em;
+  padding-bottom: 7%;
 }
 
 .vote {
