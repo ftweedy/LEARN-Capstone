@@ -67,7 +67,8 @@ class UnauthenticatedApp extends React.Component {
             <Menu.Item
               name='Home'
               active={activeItem === 'home'}
-              onClick={this.handleShow}
+              onClick={this.handleItemClick}
+              as={Link} to="/"
             >
               <img id="logo" src={Confessor}/>
             </Menu.Item>

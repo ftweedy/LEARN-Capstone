@@ -49,6 +49,24 @@ class Home extends React.Component {
     this.setState({confessions: confessions})
   }
 
+  sortingLeastLikes = () => {
+    const { confessions } = this.state
+    confessions.sort(function(a,b){
+      let dateA = new Date(a.counter), dateB = new Date(b.counter)
+      return dateA - dateB
+    })
+    this.setState({confessions: confessions})
+  }
+
+  sortingMostLikes = () => {
+    const { confessions } = this.state
+    confessions.sort(function(a,b){
+      let dateA = new Date(a.counter), dateB = new Date(b.counter)
+      return dateB - dateA
+    })
+    this.setState({confessions: confessions})
+  }
+
   handleUpvote = id => {
     fetch(`/confessions/${id}/upvote`, {
       headers: {
@@ -103,7 +121,12 @@ class Home extends React.Component {
       <React.Fragment>
         <div className="ui container">
           <div className="ui four column doubling stackable masonry grid">
-            <DropdownSort sortingNewest={this.sortingNewest} sortingOldest={this.sortingOldest}/>
+            <DropdownSort
+            sortingNewest={this.sortingNewest}
+            sortingOldest={this.sortingOldest}
+            sortingMostLikes={this.sortingMostLikes}
+            sortingLeastLikes={this.sortingLeastLikes}
+            />
             {confessions.map((confession, index) => {
               return (
                 <div className="column" key={confession.id}>
