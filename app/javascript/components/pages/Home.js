@@ -48,10 +48,9 @@ class Home extends React.Component {
     })
     this.setState({confessions: confessions})
   }
-  
+
   handleUpvote = id => {
-    const BASE = "http://localhost:3000";
-    fetch(BASE + `/confessions/${id}/upvote`, {
+    fetch(`/confessions/${id}/upvote`, {
       headers: {
         "Content-Type": "application/json"
       },
@@ -75,8 +74,7 @@ class Home extends React.Component {
   };
 
   handleDownvote = id => {
-    const BASE = "http://localhost:3000";
-    fetch(BASE + `/confessions/${id}/downvote`, {
+    fetch(`/confessions/${id}/downvote`, {
       headers: {
         "Content-Type": "application/json"
       },
