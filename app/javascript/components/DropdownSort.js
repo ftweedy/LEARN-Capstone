@@ -14,6 +14,18 @@ const tagOptions = [
     text: 'Oldest',
     value: 'sortingOldest',
     label: { color: 'blue', empty: true, circular: true },
+  },
+  {
+    key: 'Least Votes',
+    text: 'Least Liked',
+    value: 'sortingLeastLikes',
+    label: { color: 'yellow', empty: true, circular: true },
+  },
+  {
+    key: 'Most Votes',
+    text: 'Most Liked',
+    value: 'sortingMostLikes',
+    label: { color: 'green', empty: true, circular: true },
   }
 ]
 
