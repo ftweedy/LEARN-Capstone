@@ -27,19 +27,6 @@ class About extends React.Component {
           </Card.Content>
         </Card>
         <Card>
-          <Image src={Maria}/>
-          <Card.Content>
-            <Card.Header>Maria Dougherty</Card.Header>
-            <Card.Description>Placeholder Text</Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-          <ul>
-            <li><a href="https://github.com/Maria660253036" target="_blank"><i aria-hidden="true" className="fab fa-github fa-3x"/></a></li>
-            <li><a href="https://www.linkedin.com/in/maria-dougherty-9794814b/" target="_blank"><i aria-hidden="true" className="fab fa-linkedin-in fa-3x"/></a></li>
-          </ul>
-          </Card.Content>
-        </Card>
-        <Card>
           <Image src={Ace}/>
           <Card.Content>
             <Card.Header>Ace Visai</Card.Header>
@@ -49,6 +36,19 @@ class About extends React.Component {
           <ul>
             <li><a href="https://github.com/a-visai" target="_blank"><i aria-hidden="true" className="fab fa-github fa-3x"/></a></li>
             <li><a href="https://www.linkedin.com/in/a-visai/" target="_blank"><i aria-hidden="true" className="fab fa-linkedin-in fa-3x"/></a></li>
+          </ul>
+          </Card.Content>
+        </Card>
+        <Card>
+          <Image src={Maria}/>
+          <Card.Content>
+            <Card.Header>Maria Dougherty</Card.Header>
+            <Card.Description>Placeholder Text</Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+          <ul>
+            <li><a href="https://github.com/Maria660253036" target="_blank"><i aria-hidden="true" className="fab fa-github fa-3x"/></a></li>
+            <li><a href="https://www.linkedin.com/in/maria-dougherty-9794814b/" target="_blank"><i aria-hidden="true" className="fab fa-linkedin-in fa-3x"/></a></li>
           </ul>
           </Card.Content>
         </Card>
