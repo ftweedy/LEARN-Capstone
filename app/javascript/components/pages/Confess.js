@@ -75,10 +75,12 @@ class Confess extends React.Component {
             onChange={this.handleFormChange}
             value={name}
           />
+          <div className="submit">
           <Button type="submit" animated="fade" onClick={()=>this.handleNewConfession(this.state.form)}>
             <Button.Content visible>Submit Your Confession</Button.Content>
             <Button.Content hidden>There's No Turning Back!</Button.Content>
           </Button>
+          </div>
         </Form>
       <SearchBar onTermChange={term => this.handleTermChange(term)} />
       <GifList gifs={this.state.gifs} gifSelect={this.handleGifSelect} />
