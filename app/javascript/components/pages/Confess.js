@@ -18,10 +18,9 @@ class Confess extends React.Component {
   }
 
   handleNewConfession = confessionForm => {
-    const BASE = "http://localhost:3000";
     const { name, gif_url } = this.state.form
     if ((name !== "") && (gif_url !== "")){
-      return fetch(BASE + "/confessions", {
+      return fetch("/confessions", {
         body: JSON.stringify(confessionForm),
         headers: {
           "Content-Type": "application/json"
@@ -29,7 +28,7 @@ class Confess extends React.Component {
         method: "POST"
       }).then(resp => {
         let json = resp.json();
-        window.location.replace(BASE + "/protected");
+        window.location.replace("/protected");
         return json;
       });
     } else {
@@ -76,10 +75,12 @@ class Confess extends React.Component {
             onChange={this.handleFormChange}
             value={name}
           />
+          <div className="submit">
           <Button type="submit" animated="fade" onClick={()=>this.handleNewConfession(this.state.form)}>
             <Button.Content visible>Submit Your Confession</Button.Content>
             <Button.Content hidden>There's No Turning Back!</Button.Content>
           </Button>
+          </div>
         </Form>
       <SearchBar onTermChange={term => this.handleTermChange(term)} />
       <GifList gifs={this.state.gifs} gifSelect={this.handleGifSelect} />

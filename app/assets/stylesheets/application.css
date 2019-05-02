@@ -142,7 +142,6 @@
 }
 
 .form {
-  text-align: center;
   padding-left: 10em;
   padding-right: 10em;
   padding-top: 5em;
@@ -188,4 +187,21 @@
 
 .navBar{
 
+}
+
+.about {
+  padding-top: 8em;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+ul li {
+    display:inline-block;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 3em;
 }

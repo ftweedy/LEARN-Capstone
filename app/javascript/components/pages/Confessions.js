@@ -7,13 +7,13 @@ class Confessions extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            confessions: []
+            confessions: [],
+            isEmpty: 0
         }
     }
 
   handleDeleteConfession = (confession) => {
-    const BASE = "http://localhost:3000";
-    return fetch(BASE + `/confessions/${confession.id}`, {
+    return fetch(`/confessions/${confession.id}`, {
       method: "DELETE"
     })
       .then((resp) => {
@@ -32,7 +32,14 @@ class Confessions extends React.Component {
         return response.json();
       })
       .then(json => {
-        this.setState({ confessions: json });
+        let { isEmpty } = this.state
+        const { id } = this.props.current_user
+        json.map((confession, index) => {
+          if (confession.user_id !== id){
+            isEmpty += 1
+          }
+        })
+        this.setState({confessions: json, isEmpty: isEmpty});
       })
       .catch(e => {
         console.log("Error", e);
@@ -40,7 +47,7 @@ class Confessions extends React.Component {
   }
 
     render() {
-    const { confessions } = this.state;
+    let { confessions, isEmpty } = this.state;
     const { id } = this.props.current_user;
     return (
       <React.Fragment>
@@ -64,10 +71,10 @@ class Confessions extends React.Component {
           } else {
             console.log("This Post Belongs To Another User!");
           }
-        })}
-          <div className="form">
-            <h1>You Need To Confess</h1>
-          </div>                                            
+        })}                                           
+        {isEmpty === confessions.length &&
+              <h1>You Need To Confess!</h1>
+        }
         </div>
       </div>
       </React.Fragment>
