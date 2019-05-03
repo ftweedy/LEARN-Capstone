@@ -17,7 +17,7 @@ class About extends React.Component {
           <Image src={Francis}/>
           <Card.Content>
             <Card.Header>Francis Tweedy</Card.Header>
-            <Card.Description>Placeholder Text</Card.Description>
+            <Card.Description>I AM LEGION</Card.Description>
           </Card.Content>
           <Card.Content extra>
           <ul>
